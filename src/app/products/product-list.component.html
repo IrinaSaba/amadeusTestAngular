@@ -1,42 +1,54 @@
-<div class='card'> 
+<div class='card'>
    <div class='card-header'>
-      Product List
+      {{pageTitle}}
    </div>
    <div class='card-body'>
      <div class='row'>
        <div class='col-md-2'>Filter by:</div>
        <div class='col-md-4'>
-         <input type='text'
-               />
+         <input type='text'/>
        </div>
      </div>
-     <div class='row'
-         >
+     <div class='row'>
        <div class='col-md-6'>
          <h4>Filtered by: </h4>
        </div>
      </div>
-     <div class='table-responsive'>
-       <table class='table'
-              >
+     <div class='table-responsive' *ngIf="products.length">
+       <!-- <table class='table'>
          <thead>
            <tr>
              <th>
-               <button class='btn btn-primary'
-                       >
-                Image
+               <button class='btn btn-primary'>
+                  Image
                </button>
              </th>
-             <th>Product</th>
-             <th>Code</th>
-             <th>Available</th>
-             <th>Price</th>
-             <th>5 Star Rating</th>
+             <th>Name</th>
+             <th>Target</th>
+             <th>Body part</th>
+             <th>Equipment</th>
            </tr>
          </thead>
          <tbody>
          </tbody>
-       </table>
+       </table> -->
+        <button class='btn btn-primary' (click)="toggleImage()">
+         {{showImage ? 'Hide' : 'Show'}} Image
+        </button>
+        <div class="card-subtitle">
+          <ul className='table' *ngFor="let product of products" >
+            <li className="">
+                <div className='card-detail'>
+                  <p className=""> Name: {{product.name}}</p>
+                  <p className="">Target: {{product.target}}</p>
+                  <p className="">Body part: {{product.bodyPart}}</p>
+                  <p className="">Equipment: {{product.equipment}}</p>
+                </div>
+                <img *ngIf="showImage" [src]='product.imageUrl' alt={{product.name}} [style.width.px]="imageWidth" [style.margin.px]="imageMargin">
+            </li>
+          </ul>
+        </div>
+        
      </div>
    </div>
  </div>
