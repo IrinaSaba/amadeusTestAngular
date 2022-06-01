@@ -15,40 +15,22 @@
        </div>
      </div>
      <div class='table-responsive' *ngIf="products.length">
-       <!-- <table class='table'>
-         <thead>
-           <tr>
-             <th>
-               <button class='btn btn-primary'>
-                  Image
-               </button>
-             </th>
-             <th>Name</th>
-             <th>Target</th>
-             <th>Body part</th>
-             <th>Equipment</th>
-           </tr>
-         </thead>
-         <tbody>
-         </tbody>
-       </table> -->
         <button class='btn btn-primary' (click)="toggleImage()">
          {{showImage ? 'Hide' : 'Show'}} Image
         </button>
         <div class="card-subtitle">
-          <ul className='table' *ngFor="let product of products" >
-            <li className="">
-                <div className='card-detail'>
-                  <p className=""> Name: {{product.name}}</p>
-                  <p className="">Target: {{product.target}}</p>
-                  <p className="">Body part: {{product.bodyPart}}</p>
-                  <p className="">Equipment: {{product.equipment}}</p>
+          <ul class='table'>
+            <li class="table-item" *ngFor="let product of products">
+                <div class='card-detail'>
+                  <p class="">Name: {{product.name}}</p>
+                  <p class="">Target: {{product.target}}</p>
+                  <p class="">Body part: {{product.bodyPart}}</p>
+                  <p class="">Equipment: {{product.equipment}}</p>
                 </div>
-                <img *ngIf="showImage" [src]='product.imageUrl' alt={{product.name}} [style.width.px]="imageWidth" [style.margin.px]="imageMargin">
+                <img *ngIf="showImage" [src]='product.imageUrl' [alt]='product.name' [style.width.px]="imageWidth" [style.margin.px]="imageMargin">
             </li>
           </ul>
         </div>
-        
      </div>
    </div>
  </div>

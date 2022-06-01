@@ -1,10 +1,19 @@
 .card-header {
    text-align: center;
 }
-.card-subtitle {
+.table {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
+}
+.table>:not(:first-child) {
+   border-top: none;
+}
+.table-item {
+   flex: 0 0 29%;
+   background-color:blanchedalmond;
+   margin: 10px;
+   padding:10px;
 }
 // .card-detail {
 //    display: flex;
