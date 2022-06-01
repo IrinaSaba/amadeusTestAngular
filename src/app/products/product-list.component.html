@@ -6,12 +6,12 @@
      <div class='row'>
        <div class='col-md-2'>Filter by:</div>
        <div class='col-md-4'>
-         <input type='text'/>
+         <input type='text' [(ngModel)]='listFilter'/>
        </div>
      </div>
      <div class='row'>
        <div class='col-md-6'>
-         <h4>Filtered by: </h4>
+         <h4>Filtered by: {{ listFilter }}</h4>
        </div>
      </div>
      <div class='table-responsive' *ngIf="products.length">
@@ -22,8 +22,8 @@
           <ul class='table'>
             <li class="table-item" *ngFor="let product of products">
                 <div class='card-detail'>
-                  <p class="">Name: {{product.name}}</p>
-                  <p class="">Target: {{product.target}}</p>
+                  <p class="">Name: {{product.name }}</p>
+                  <p class="">Target: {{product.target | uppercase}}</p>
                   <p class="">Body part: {{product.bodyPart}}</p>
                   <p class="">Equipment: {{product.equipment}}</p>
                 </div>
